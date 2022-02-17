@@ -1,0 +1,27 @@
+{
+  "name": "@synzhang/react-permission",
+  "version": "0.0.1",
+  "description": "A Permission component for React.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synzhang/react-permission.git"
+  },
+  "keywords": [
+    "react",
+    "permission"
+  ],
+  "author": "Syn Zhang <zeyanzhang.china@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/synzhang/react-permission/issues"
+  },
+  "homepage": "https://github.com/synzhang/react-permission#readme"
+}
