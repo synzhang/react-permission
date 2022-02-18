@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/synzhang/react-permission/issues"
   },
-  "homepage": "https://github.com/synzhang/react-permission#readme"
+  "homepage": "https://github.com/synzhang/react-permission#readme",
+  "dependencies": {
+    "react": "17.0.2"
+  }
 }
