@@ -8,7 +8,7 @@ export enum ROLES {
 
 type RoleTypes = keyof typeof ROLES
 
-export const useAuthorization = () => {
+const usePermitByRole = () => {
   const { currentUser } = usePermission()
 
   if (!currentUser) {
@@ -29,7 +29,7 @@ export const useAuthorization = () => {
   return { checkAccess, role: currentUser.role }
 }
 
-type AuthorizationProps = {
+type PermissionProps = {
   forbiddenFallback?: ReactNode
   children: ReactNode
 } & (
@@ -43,13 +43,13 @@ type AuthorizationProps = {
     }
 )
 
-export const Authorization = ({
+export const Permission = ({
   policyCheck,
   allowedRoles,
   forbiddenFallback = null,
   children,
-}: AuthorizationProps) => {
-  const { checkAccess } = useAuthorization()
+}: PermissionProps) => {
+  const { checkAccess } = usePermitByRole()
 
   let canAccess = false
 
