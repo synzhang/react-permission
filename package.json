@@ -8,7 +8,16 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "release:pre": "npm run release -- --prerelease",
+    "release:major": "npm run release -- --release-as major",
+    "release:minor": "npm run release -- --release-as minor",
+    "release:patch": "npm run release -- --release-as patch",
+    "release:premajor": "npm run release:major -- --prerelease",
+    "release:preminor": "npm run release:minor -- --prerelease",
+    "release:prepatch": "npm run release:patch -- --prerelease",
+    "postrelease": "git push && git push --tags --no-verify"
   },
   "repository": {
     "type": "git",
@@ -26,5 +35,8 @@
   "homepage": "https://github.com/synzhang/react-permission#readme",
   "dependencies": {
     "react": "17.0.2"
+  },
+  "devDependencies": {
+    "standard-version": "9.3.2"
   }
 }
