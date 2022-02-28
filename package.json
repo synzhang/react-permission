@@ -37,6 +37,9 @@
     "react": "17.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.5",
+    "@babel/preset-env": "7.16.11",
     "rollup": "2.68.0",
     "standard-version": "9.3.2",
     "typescript": "4.5.5"
