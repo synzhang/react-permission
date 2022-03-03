@@ -1,15 +1,24 @@
 import { babel } from '@rollup/plugin-babel';
-import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import pkg from './package.json';
 
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const config = {
   input: 'src/index.tsx',
   output: {
-    dir: 'output',
+    file: pkg.module,
     format: 'esm'
   },
+  external: ['react'],
   plugins: [
-    babel({ babelHelpers: 'bundled' }),
-    typescript(),
+    resolve({ extensions }),
+    commonjs(),
+    babel({
+      extensions,
+      babelHelpers: 'bundled',
+      include: ['src/**/*'],
+    }),
   ]
 };
 

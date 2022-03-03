@@ -2,14 +2,17 @@
   "name": "@synzhang/react-permission",
   "version": "0.0.1",
   "description": "A Permission component for React.",
-  "main": "index.js",
+  "module": "dist/index.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
+    "check-types": "tsc --noEmit",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "rollup -c",
+    "build": "npm run build:types && npm run build:js",
     "release": "standard-version",
     "release:pre": "npm run release -- --prerelease",
     "release:major": "npm run release -- --release-as major",
@@ -35,6 +38,7 @@
   },
   "homepage": "https://github.com/synzhang/react-permission#readme",
   "dependencies": {
+    "core-js": "^3.21.1",
     "react": "17.0.2"
   },
   "devDependencies": {
@@ -44,6 +48,8 @@
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@rollup/plugin-babel": "5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "13.1.3",
     "@rollup/plugin-typescript": "8.3.1",
     "@types/react": "17.0.39",
     "rollup": "2.68.0",

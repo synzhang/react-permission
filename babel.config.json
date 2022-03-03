@@ -9,10 +9,11 @@
           "chrome": "67",
           "safari": "11.1"
         },
-        "useBuiltIns": "usage"
-      },
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ]
+        "useBuiltIns": "usage",
+        "corejs": "3.21"
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ]
 }
