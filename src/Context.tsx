@@ -1,8 +1,20 @@
-import { createContext, useContext } from 'react'
+import { FC, createContext, useContext } from 'react'
 
-const PermissionContext = createContext({})
+type Props = {
+  roles: any
+  policies: any
+  currentUser: any
+}
 
-export const PermissionProvider = ({
+type Context = {
+  roles: any
+  policies: any
+  currentUser: any
+}
+
+const PermissionContext = createContext<Context>({} as Context)
+
+export const PermissionProvider: FC<Props> = ({
   roles,
   policies,
   currentUser,
