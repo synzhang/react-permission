@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A Permission component for React.",
   "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "directories": {
     "doc": "docs",
     "test": "test"
