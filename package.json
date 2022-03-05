@@ -25,6 +25,10 @@
     "release:prepatch": "npm run release:patch -- --prerelease",
     "postrelease": "git push && git push --tags --no-verify"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/synzhang/react-permission.git"
