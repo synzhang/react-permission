@@ -1,6 +1,6 @@
 {
   "name": "@synzhang/react-permission",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A Permission component for React.",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -31,7 +31,9 @@
     "dist"
   ],
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "repository": {
     "type": "git",
