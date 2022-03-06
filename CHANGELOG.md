@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/synzhang/react-permission/compare/v0.0.7...v0.0.8) (2022-03-06)
+
+
+### Bug Fixes
+
+* export modules ([b5a19ea](https://github.com/synzhang/react-permission/commit/b5a19ea1ec14a8c2946d133a81493c1b869c11ed))
+
 ### [0.0.7](https://github.com/synzhang/react-permission/compare/v0.0.6...v0.0.7) (2022-03-06)
 
 ### [0.0.6](https://github.com/synzhang/react-permission/compare/v0.0.5...v0.0.6) (2022-03-06)
