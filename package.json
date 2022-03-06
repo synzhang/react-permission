@@ -30,6 +30,9 @@
     "src",
     "dist"
   ],
+  "release": {
+    "branches": ["main"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/synzhang/react-permission.git"
