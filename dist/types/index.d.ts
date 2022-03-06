@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { usePermission } from './Context';
+import { PermissionProvider } from './Context';
 export declare enum ROLES {
     ADMIN = "ADMIN",
     USER = "USER"
@@ -16,5 +16,5 @@ declare type PermissionProps = {
     policyCheck: boolean;
 });
 declare const Permission: ({ policyCheck, allowedRoles, forbiddenFallback, children, }: PermissionProps) => JSX.Element;
-export { usePermission };
+export { PermissionProvider };
 export default Permission;

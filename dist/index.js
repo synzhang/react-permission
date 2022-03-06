@@ -1,4 +1,4 @@
-import { useContext, createContext, useCallback } from 'react';
+import { createContext, useContext, useCallback } from 'react';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -1290,6 +1290,21 @@ $({ target: 'String', proto: true, forced: !correctIsRegExpLogic('includes') }, 
 });
 
 const PermissionContext = /*#__PURE__*/createContext({});
+const PermissionProvider = _ref => {
+  let {
+    roles,
+    policies,
+    currentUser,
+    children
+  } = _ref;
+  return /*#__PURE__*/React.createElement(PermissionContext.Provider, {
+    value: {
+      roles,
+      policies,
+      currentUser
+    }
+  }, children);
+};
 const usePermission = () => {
   const context = useContext(PermissionContext);
 
@@ -1358,4 +1373,4 @@ const Permission = _ref2 => {
   return /*#__PURE__*/React.createElement(React.Fragment, null, canAccess ? children : forbiddenFallback);
 };
 
-export { ROLES, Permission as default, usePermission };
+export { PermissionProvider, ROLES, Permission as default };
