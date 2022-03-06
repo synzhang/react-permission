@@ -43,7 +43,7 @@ type PermissionProps = {
     }
 )
 
-export const Permission = ({
+const Permission = ({
   policyCheck,
   allowedRoles,
   forbiddenFallback = null,
@@ -63,3 +63,6 @@ export const Permission = ({
 
   return <>{canAccess ? children : forbiddenFallback}</>
 }
+
+export { usePermission }
+export default Permission
