@@ -1358,4 +1358,4 @@ const Permission = _ref2 => {
   return /*#__PURE__*/React.createElement(React.Fragment, null, canAccess ? children : forbiddenFallback);
 };
 
-export { Permission, ROLES };
+export { ROLES, Permission as default, usePermission };
