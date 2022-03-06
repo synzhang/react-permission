@@ -1,5 +1,5 @@
 import { ReactNode, useCallback } from 'react'
-import { usePermission } from './Context'
+import { PermissionProvider, usePermission } from './Context'
 
 export enum ROLES {
   ADMIN = 'ADMIN',
@@ -64,5 +64,5 @@ const Permission = ({
   return <>{canAccess ? children : forbiddenFallback}</>
 }
 
-export { usePermission }
+export { PermissionProvider }
 export default Permission
