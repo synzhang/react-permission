@@ -1,6 +1,6 @@
 {
   "name": "@synzhang/react-permission",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A Permission component for React.",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
