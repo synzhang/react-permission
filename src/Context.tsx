@@ -1,18 +1,18 @@
-import { FC, createContext, useContext } from 'react'
+import React, { FC, createContext, useContext } from "react";
 
 type Props = {
-  roles: any
-  policies: any
-  currentUser: any
-}
+  roles: any;
+  policies: any;
+  currentUser: any;
+};
 
 type Context = {
-  roles: any
-  policies: any
-  currentUser: any
-}
+  roles: any;
+  policies: any;
+  currentUser: any;
+};
 
-const PermissionContext = createContext<Context>({} as Context)
+const PermissionContext = createContext<Context>({} as Context);
 
 export const PermissionProvider: FC<Props> = ({
   roles,
@@ -23,14 +23,14 @@ export const PermissionProvider: FC<Props> = ({
   <PermissionContext.Provider value={{ roles, policies, currentUser }}>
     {children}
   </PermissionContext.Provider>
-)
+);
 
 export const usePermission = () => {
-  const context = useContext(PermissionContext)
+  const context = useContext(PermissionContext);
 
-  if (typeof context === 'undefined') {
-    throw new Error('useContext must be used within a Provider')
+  if (typeof context === "undefined") {
+    throw new Error("useContext must be used within a Provider");
   }
 
-  return context
-}
+  return context;
+};

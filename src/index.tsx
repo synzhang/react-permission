@@ -1,47 +1,47 @@
-import { ReactNode, useCallback } from 'react'
-import { PermissionProvider, usePermission } from './Context'
+import React, { ReactNode, useCallback } from "react";
+import { PermissionProvider, usePermission } from "./Context";
 
 export enum ROLES {
-  ADMIN = 'ADMIN',
-  USER = 'USER',
+  ADMIN = "ADMIN",
+  USER = "USER",
 }
 
-type RoleTypes = keyof typeof ROLES
+type RoleTypes = keyof typeof ROLES;
 
 const usePermitByRole = () => {
-  const { currentUser } = usePermission()
+  const { currentUser } = usePermission();
 
   if (!currentUser) {
-    throw Error('User does not exist!')
+    throw Error("User does not exist!");
   }
 
   const checkAccess = useCallback(
     ({ allowedRoles }: { allowedRoles: RoleTypes[] }) => {
       if (allowedRoles?.length > 0) {
-        return allowedRoles.includes(currentUser.role)
+        return allowedRoles.includes(currentUser.role);
       }
 
-      return true
+      return true;
     },
     [currentUser.role]
-  )
+  );
 
-  return { checkAccess, role: currentUser.role }
-}
+  return { checkAccess, role: currentUser.role };
+};
 
 type PermissionProps = {
-  forbiddenFallback?: ReactNode
-  children: ReactNode
+  forbiddenFallback?: ReactNode;
+  children: ReactNode;
 } & (
   | {
-      allowedRoles: RoleTypes[]
-      policyCheck?: never
+      allowedRoles: RoleTypes[];
+      policyCheck?: never;
     }
   | {
-      allowedRoles?: never
-      policyCheck: boolean
+      allowedRoles?: never;
+      policyCheck: boolean;
     }
-)
+);
 
 const Permission = ({
   policyCheck,
@@ -49,20 +49,20 @@ const Permission = ({
   forbiddenFallback = null,
   children,
 }: PermissionProps) => {
-  const { checkAccess } = usePermitByRole()
+  const { checkAccess } = usePermitByRole();
 
-  let canAccess = false
+  let canAccess = false;
 
   if (allowedRoles) {
-    canAccess = checkAccess({ allowedRoles })
+    canAccess = checkAccess({ allowedRoles });
   }
 
-  if (typeof policyCheck !== 'undefined') {
-    canAccess = policyCheck
+  if (typeof policyCheck !== "undefined") {
+    canAccess = policyCheck;
   }
 
-  return <>{canAccess ? children : forbiddenFallback}</>
-}
+  return <>{canAccess ? children : forbiddenFallback}</>;
+};
 
-export { PermissionProvider }
-export default Permission
+export { PermissionProvider };
+export default Permission;
