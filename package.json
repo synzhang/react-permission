@@ -16,15 +16,6 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "rollup -c",
     "build": "npm run clean && npm run build:types && npm run build:js",
-    "release": "standard-version",
-    "release:pre": "npm run release -- --prerelease",
-    "release:major": "npm run release -- --release-as major",
-    "release:minor": "npm run release -- --release-as minor",
-    "release:patch": "npm run release -- --release-as patch",
-    "release:premajor": "npm run release:major -- --prerelease",
-    "release:preminor": "npm run release:minor -- --prerelease",
-    "release:prepatch": "npm run release:patch -- --prerelease",
-    "postrelease": "git push && git push --tags --no-verify",
     "prepare": "husky install"
   },
   "files": [
@@ -35,6 +26,9 @@
     "branches": [
       "main"
     ]
+  },
+  "standard-version": {
+    "releaseCommitMessageFormat": "chore(release): {{currentTag}} [skip ci]"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
