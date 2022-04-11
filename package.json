@@ -1,6 +1,6 @@
 {
   "name": "@synzhang/react-permission",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A Permission component for React.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
