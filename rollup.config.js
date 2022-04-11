@@ -11,12 +11,12 @@ const config = {
     {
       file: pkg.module,
       format: "esm",
-      sourcemap: "inline",
+      sourcemap: true,
     },
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: "inline",
+      sourcemap: true,
     },
   ],
   external: ["react"],
