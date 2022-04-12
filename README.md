@@ -11,28 +11,24 @@ npm install @synzhang/react-permission
 ## Quick Start
 
 ```js
-export const ROLES = ['ADMIN', 'USER']
+export const ROLES = ["ADMIN", "USER"];
 export const POLICIES = {
-  'item:delete': (item, user) => {
-    if (user.role === 'ADMIN') {
-      return true
+  "item:delete": (item, user) => {
+    if (user.role === "ADMIN") {
+      return true;
     }
 
-    if (user.role === 'USER' && item.userId === user.id) {
-      return true
+    if (user.role === "USER" && item.userId === user.id) {
+      return true;
     }
 
-    return false
+    return false;
   },
-}
+};
 ```
 
 ```js
-<PermissionProvider
-  currentUser={currentUser}
-  roles={ROLES}
-  policies={POLICIES}
->
+<PermissionProvider currentUser={currentUser} roles={ROLES} policies={POLICIES}>
   <App />
 </PermissionProvider>
 ```
@@ -40,19 +36,17 @@ export const POLICIES = {
 ### Role based access control
 
 ```js
-<Permission allowRoles={['ADMIN']}>
-  {'Sensitive Content'}
-</Permission>
+<Permission allowedRoles={["ADMIN"]}>{"Sensitive Content"}</Permission>
 ```
 
 ### Permission based access control
 
 ```js
-import POLICIES from 'policies'
+import POLICIES from "policies";
 
-<Permission policyCheck={POLICIES['item:delete'](item, user)}>
-  {'Sensitive Operation'}
-</Permission>
+<Permission policyCheck={POLICIES["item:delete"](item, user)}>
+  {"Sensitive Operation"}
+</Permission>;
 ```
 
 ## License
