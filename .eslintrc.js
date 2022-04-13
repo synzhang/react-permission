@@ -20,4 +20,5 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {},
+  ignorePatterns: ["dist"],
 };
