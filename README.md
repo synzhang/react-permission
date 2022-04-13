@@ -49,6 +49,25 @@ import POLICIES from "policies";
 </Permission>;
 ```
 
+## API
+
+### PermissionProvider
+
+| Property    | Type   | Default | Description         |
+| ----------- | ------ | ------- | ------------------- |
+| currentUser | object | null    | Current user object |
+| roles       | array  | []      | Roles               |
+| policies    | object | {}      | Policies            |
+
+### Permission
+
+| Property          | Type            | Default | Description                  |
+| ----------------- | --------------- | ------- | ---------------------------- |
+| policyCheck       | function        | null    | Policy check function        |
+| allowedRoles      | array           | []      | Allowed roles                |
+| forbiddenFallback | React.Component | null    | Forbidden fallback component |
+| children          | React.Component | null    | Children component           |
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
